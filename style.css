@@ -1,0 +1,188 @@
+:root {
+  --verde: #1B7A3E;
+  --verde-oscuro: #0E2A1A;
+  --crema: #FBF7EE;
+  --lima: #C4E86B;
+  --texto: #16211A;
+  --texto-suave: #4B5A4F;
+  --borde: #E4DFD1;
+
+  --display: 'Fraunces', serif;
+  --sans: 'Inter', system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  color: var(--texto);
+  background: var(--crema);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: var(--display); margin: 0; }
+
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Topbar */
+.topbar {
+  background: var(--crema);
+  border-bottom: 1px solid var(--borde);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+.logo {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--verde-oscuro);
+}
+.nav { display: flex; gap: 28px; }
+.nav a {
+  color: var(--texto);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.nav a:hover { color: var(--verde); }
+
+.btn {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+.btn-primary { background: var(--verde); color: white; }
+.btn-primary:hover { background: #156233; }
+.btn-outline { background: transparent; border: 1.5px solid var(--verde-oscuro); color: var(--verde-oscuro); }
+.btn-claro { background: var(--lima); color: var(--verde-oscuro); }
+
+/* Hero */
+.hero { padding: 72px 0 64px; }
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+.hero-text h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+  color: var(--verde-oscuro);
+}
+.hero-text p {
+  color: var(--texto-suave);
+  font-size: 1.1rem;
+  max-width: 46ch;
+  margin-top: 18px;
+}
+.direccion-form {
+  display: flex;
+  gap: 10px;
+  margin-top: 28px;
+  max-width: 420px;
+}
+.direccion-form input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1.5px solid var(--borde);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+}
+.direccion-form input:focus { outline: 2px solid var(--verde); border-color: var(--verde); }
+
+/* Visual hero: plato ilustrativo simple */
+.hero-visual { display: flex; justify-content: center; }
+.plato { position: relative; width: 260px; height: 260px; }
+.plato-circulo {
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  background: linear-gradient(160deg, var(--verde) 0%, var(--verde-oscuro) 100%);
+  position: absolute;
+  bottom: 0; left: 20px;
+}
+.plato-vapor {
+  position: absolute;
+  width: 6px;
+  border-radius: 3px;
+  background: var(--lima);
+  opacity: 0.7;
+  animation: subir 2.4s ease-in-out infinite;
+}
+.v1 { height: 40px; left: 90px; top: 10px; animation-delay: 0s; }
+.v2 { height: 55px; left: 130px; top: -6px; animation-delay: 0.4s; }
+.v3 { height: 35px; left: 170px; top: 16px; animation-delay: 0.8s; }
+@keyframes subir {
+  0%, 100% { transform: translateY(0); opacity: 0.7; }
+  50% { transform: translateY(-10px); opacity: 0.3; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .plato-vapor { animation: none; }
+}
+
+/* Categorías */
+.categorias {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-bottom: 48px;
+}
+.chip {
+  background: white;
+  border: 1.5px solid var(--borde);
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.chip:hover { border-color: var(--verde); }
+
+/* Restaurantes */
+.restaurantes { padding: 40px 0 64px; }
+.restaurantes h2, .como-funciona h2 {
+  font-size: 1.8rem;
+  color: var(--verde-oscuro);
+  margin-bottom: 24px;
+}
+.grid-restaurantes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.tarjeta {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--borde);
+}
+.tarjeta-img { height: 140px; }
+.tarjeta-info { padding: 16px; }
+.tarjeta-info h3 { font-size: 1.1rem; margin-bottom: 6px; }
+.meta { color: var(--texto-suave); font-size: 0.88rem; margin: 0; }
+
+/* Cómo funciona */
+.como-funciona { padding: 40px 0 72px; }
+.pasos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.paso-num
