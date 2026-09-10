@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precoz — Pedí antes de tener hambre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="logo">Precoz</div>
+    <nav class="nav">
+      <a href="#como-funciona">Cómo funciona</a>
+      <a href="#restaurantes">Restaurantes</a>
+      <a href="#repartidores">Sumate a repartir</a>
+    </nav>
+    <button id="btn-cuenta" class="btn btn-outline">Iniciar sesión</button>
+  </div>
+</header>
+
+<div id="modal-login" class="modal-overlay oculto">
+  <div class="modal-caja">
+    <button id="btn-cerrar-modal" class="modal-cerrar" aria-label="Cerrar">&times;</button>
+    <h2 id="modal-titulo">Iniciar sesión</h2>
+    <p id="modal-mensaje" class="modal-mensaje"></p>
+    <form id="form-auth">
+      <label>
+        Email
+        <input type="email" id="input-email" required>
+      </label>
+      <label>
+        Contraseña
+        <input type="password" id="input-password" required minlength="6">
+      </label>
+      <button type="submit" class="btn btn-primary modal-boton">Iniciar sesión</button>
+    </form>
+    <p class="modal-cambiar">
+      <span id="texto-cambiar">¿No tenés cuenta?</span>
+      <a href="#" id="link-cambiar-modo">Creá una</a>
+    </p>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <h1>Tu pedido, listo<br>antes de que lo pienses.</h1>
+      <p>Comida de tus restaurantes de siempre, con entregas que llegan más rápido de lo esperado. Así de simple.</p>
+      <form class="direccion-form">
+        <input type="text" placeholder="¿A qué dirección lo llevamos?">
+        <button type="submit" class="btn btn-primary">Buscar</button>
+      </form>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="plato">
+        <div class="plato-circulo"></div>
+        <div class="plato-vapor v1"></div>
+        <div class="plato-vapor v2"></div>
+        <div class="plato-vapor v3"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="categorias wrap">
+  <button class="chip">🍕 Pizza</button>
+  <button class="chip">🍔 Hamburguesas</button>
+  <button class="chip">🍣 Sushi</button>
+  <button class="chip">🥗 Saludable</button>
+  <button class="chip">🍰 Postres</button>
+  <button class="chip">☕ Café</button>
+</section>
+
+<section id="restaurantes" class="restaurantes wrap">
+  <h2>Cerca tuyo</h2>
+  <div class="grid-restaurantes">
+    <article class="tarjeta">
+      <div class="tarjeta-img" style="background:#E9CBA7"></div>
+      <div class="tarjeta-info">
+        <h3>La Esquina Verde</h3>
+        <p class="meta">Comida casera · 20-30 min</p>
+      </div>
+    </article>
+    <article class="tarjeta">
+      <div class="tarjeta-img" style="background:#D9A566"></div>
+      <div class="tarjeta-info">
+        <h3>Pizza Rápida</h3>
+        <p class="meta">Pizzería · 15-25 min</p>
+      </div>
+    </article>
+    <article class="tarjeta">
+      <div class="tarjeta-img" style="background:#B7C9A8"></div>
+      <div class="tarjeta-info">
+        <h3>Huerta & Grano</h3>
+        <p class="meta">Saludable · 25-35 min</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="como-funciona" class="como-funciona wrap">
+  <h2>Cómo funciona</h2>
+  <div class="pasos">
+    <div class="paso">
+      <span class="paso-num">1</span>
+      <h3>Elegís</h3>
+      <p>Buscás tu restaurante favorito o descubrís uno nuevo cerca tuyo.</p>
+    </div>
+    <div class="paso">
+      <span class="paso-num">2</span>
+      <h3>Pedís</h3>
+      <p>Armás tu pedido y pagás como quieras, desde la app.</p>
+    </div>
+    <div class="paso">
+      <span class="paso-num">3</span>
+      <h3>Llega</h3>
+      <p>Un repartidor de Precoz lo trae directo a tu puerta.</p>
+    </div>
+  </div>
+</section>
+
+<section id="repartidores" class="repartidores">
+  <div class="wrap repartidores-inner">
+    <div>
+      <h2>¿Repartís con nosotros?</h2>
+      <p>Sumate a la flota de Precoz y generá ingresos con tus propios horarios.</p>
+    </div>
+    <button class="btn btn-claro">Quiero repartir</button>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="logo">Precoz</div>
+    <p>&copy; 2026 Precoz. Hecho con hambre de hacer las cosas bien.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="auth.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
